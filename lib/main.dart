@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
      debugShowCheckedModeBanner: false,
-      home: const Note(),  // Your Note widget as the home screen
+      home: const Note(),
     );
   }
 }

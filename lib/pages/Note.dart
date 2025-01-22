@@ -22,31 +22,66 @@ class _NoteState extends State<Note> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: appBar(),
+      backgroundColor: Colors.white,
       body: Column(
-        children: [
-          Container(
-            margin: EdgeInsets.only(top:40,left: 20,right:20),
-            decoration: BoxDecoration(
-              boxShadow: [
-                BoxShadow(
-                  color: Color(0xff1F1617).withOpacity(0.11),
-                  blurRadius: 40,
-                )
-              ]
-            ),
-            child: TextField(
-              decoration: InputDecoration(
-                filled: true,
-                fillColor: Colors.white,
-                border: OutlineInputBorder(
+        children: [_searchFeild()],
+      ),
+
+      floatingActionButton: FloatingActionButton(onPressed: () {
+        print("clicked");
+      },
+      child: SvgPicture.asset('assets/icons/add-circle-svgrepo-com.svg',
+      height: 100,
+     width: 100,
+     ),
+     shape: CircleBorder(),
+     elevation: 0,
+      ),
+
+    );
+  }
+
+  Container _searchFeild() {
+    return Container(
+      margin: EdgeInsets.only(top: 40, left: 20, right: 20),
+      decoration: BoxDecoration(boxShadow: [
+        BoxShadow(
+          color: Color(0xff1F1617).withOpacity(0.11),
+          blurRadius: 40,
+        )
+      ]),
+      child: TextField(
+        decoration: InputDecoration(
+            filled: true,
+            fillColor: Colors.white,
+            hintText: 'Type Notes',
+            hintStyle: (TextStyle(
+              color: Color(0xffDDDADA),
+              fontSize: 14,
+            )),
+            contentPadding: EdgeInsets.all(15),
+            suffixIcon: SizedBox(
+                width: 100,
+                child: IntrinsicHeight(
+                    child: Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                      VerticalDivider(
+                        color: Colors.black,
+                        thickness: 0.1,
+                        indent: 10,
+                        endIndent: 10,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(13),
+                        child: SvgPicture.asset(
+                            'assets/icons/three-dots-vertical-svgrepo-com.svg'),
+                      )
+                    ]))),
+            border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(15),
-                borderSide: BorderSide.none
-                )
-              ),
-            ),
-          )
-        ],
-      )
+                borderSide: BorderSide.none)),
+      ),
     );
   }
 
