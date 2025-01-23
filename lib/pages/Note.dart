@@ -54,7 +54,7 @@ class _NoteState extends State<Note> {
         decoration: InputDecoration(
             filled: true,
             fillColor: Colors.white,
-            hintText: 'Type Notes',
+            hintText: 'Type Notes here...',
             hintStyle: (TextStyle(
               color: Color(0xffDDDADA),
               fontSize: 14,
